@@ -22,9 +22,8 @@ async function main() {
 	const confluenceClient = new ConfluenceClient({
 		host: settings.confluenceBaseUrl,
 		authentication: {
-			basic: {
-				email: settings.atlassianUserName,
-				apiToken: settings.atlassianApiToken,
+			oauth2: {
+				accessToken: settings.atlassianApiToken
 			},
 		},
 		middlewares: {
